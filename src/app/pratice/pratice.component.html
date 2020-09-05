@@ -1,0 +1,65 @@
+
+<form  #form="ngForm" (ngSubmit)="save(form.value)">
+    <div class="form-row ">
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">ID</label>
+            <input type="text" name="Id" #Id="ngModel" ngModel class="form-control"  placeholder="Enter">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Name</label>
+            <input type="text" name="name" #name="ngModel" ngModel class="form-control"  placeholder="Enter">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Gender</label>
+            <select class="form-control" name="select" #select="ngModel" ngModel id="exampleFormControlSelect1">
+                <option>Select</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Age</label>
+            <input type="number" #age="ngModel" name="age" ngModel class="form-control"  placeholder="Enter">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Designation</label>
+            <input type="text" #Designation="ngModel" name="Designation" ngModel class="form-control"  placeholder="Enter">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Department</label>
+            <select name="Department" palceholder="Deapartment" #Department="ngModel" ngModel >
+                <option>Frontend</option>
+                <option>backend</option>
+                <option>
+                Testing
+                </option>
+                <option>Deployemnt</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="" class="mb-1">Joining Date</label>
+            <input type="date" #joinging="ngModel" name="joingdate" ngModel class="form-control"  placeholder="">
+        </div>
+    </div>
+    <button type="submit">save</button>
+</form>
+<table>
+  <thead>
+      <tr>id</tr>
+      <tr>name</tr>
+      <tr>department</tr>
+      <tr>gentde</tr>
+      <tr>Designation</tr>
+      <tr>Joining</tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let c of data">
+        <td>{{c.Id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.Department}}</td>
+        <td>{{c.Designation}}</td>
+        <td>{{c.Joining}}</td>
+     <a rouerLink='c.Id'>Edit</a>
+    </tr>
+</tbody>
+</table>
